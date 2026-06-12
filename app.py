@@ -88,4 +88,5 @@ if st.button("Predict CO2 Emission"):
     sample[cols] = scaler.transform(sample[cols])
 
     prediction = model.predict(sample)
-    st.success(f"🌿 Predicted CO2 Emission: **{round(float(prediction[0]), 2)} g/km**")
+    result = prediction.flatten()[0]
+    st.success(f"🌿 Predicted CO2 Emission: **{round(float(result), 2)} g/km**")
